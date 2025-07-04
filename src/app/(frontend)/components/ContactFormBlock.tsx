@@ -21,7 +21,7 @@ export default function ContactFormBlock({ block }: { block: ContactFormProps })
 
     const formData = new FormData(e.target as HTMLFormElement)
     const data = Object.fromEntries(formData)
-console.log(data)
+//console.log(data)
   }
 //console.log('FIELDS:', block.form.fields)
   return (
