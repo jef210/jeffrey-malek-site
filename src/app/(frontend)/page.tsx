@@ -1,5 +1,4 @@
 import { headers as getHeaders } from 'next/headers.js'
-import Image from 'next/image'
 import { getPayload } from 'payload'
 import React from 'react'
 import { fileURLToPath } from 'url'
@@ -8,6 +7,9 @@ import config from '@/payload.config'
 import './styles.css'
 import { Page } from '@/payload-types'
 import HeroBlock from './components/HeroBlock'
+import ContentBlock from './components/ContentBlock'
+import ContactFormBlock from './components/ContactFormBlock'  
+import BlocksRenderer from './components/BlocksRenderer'
 
 export default async function HomePage() {
   const headers = await getHeaders()
@@ -26,25 +28,43 @@ export default async function HomePage() {
         equals: 'landing-page',
       },
     },
-  })  
+  })
 
   if (!page) {
     return <div>Page not found</div>
   }
+  
+  // This is commented out cause in the tutorial code the old version of nextjs caused an issue
+  //Summary
+//The tutorial works due to older Next.js/React behavior.
+//Modern Next.js requires interactive blocks to be rendered inside a Client Component.
+//Move your block rendering into a Client Component as shown above. 
 
-  const renderBlock = (block: Page[layout][0]) => {
+
+
+// Type for a block in the layout array
+/*type LayoutBlock = Page['layout'][number]
+
+  const renderBlock = (block: LayoutBlock) => {
     switch (block.blockType) {
-      case 'hero': 
-      return <HeroBlock block={block} key={block.id} />
+      case 'hero':
+        return <HeroBlock block={block} key={block.id} />
+      case 'content':
+        return <ContentBlock block={block} key={block.id} />
+      case 'contact-form':
+        return <ContactFormBlock block={block} key={block.id} />
       default:
         return null
     }
-  }
+  }*/
+
+
   return (
     <div>
-      {/*page.title*/}
-      {/*<pre>{JSON.stringify(page.layout[0], null, 2)}</pre>*/}
-      <div className="page">{page.layout?.map((block) => renderBlock(block))}</div>
+      {/* <h1>{page.title}</h1> */}
+      <div className="page">
+        <BlocksRenderer layout={page.layout} />
+      </div>
     </div>
   )
 }

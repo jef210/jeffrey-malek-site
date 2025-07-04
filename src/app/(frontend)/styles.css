@@ -1,0 +1,7 @@
+
+/* this is a way to wrap a div and call a class on an image inside a rich text field */
+.content-block img {
+  width: 400px !important;
+  height: auto !important;
+  /* Or any size you want */
+}
