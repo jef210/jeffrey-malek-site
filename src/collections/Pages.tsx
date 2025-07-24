@@ -1,7 +1,8 @@
-import { ContactFormBlock } from '@/blocks/ContactFormBlock'
-import { ContentBlock } from '@/blocks/ContentBlock'
-import { HeroBlock } from '@/blocks/HeroBlock'
 import { CollectionConfig } from 'payload'
+import { HeroBlock } from '@/blocks/HeroBlock'
+import { ContentBlock } from '@/blocks/ContentBlock'
+import { ContactFormBlock } from '@/blocks/ContactFormBlock'
+
 
 const Pages: CollectionConfig = {
   slug: 'pages',

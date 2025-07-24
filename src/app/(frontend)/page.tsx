@@ -5,10 +5,6 @@ import { fileURLToPath } from 'url'
 
 import config from '@/payload.config'
 import './styles.css'
-import { Page } from '@/payload-types'
-import HeroBlock from './components/HeroBlock'
-import ContentBlock from './components/ContentBlock'
-import ContactFormBlock from './components/ContactFormBlock'  
 import BlocksRenderer from './components/BlocksRenderer'
 
 export default async function HomePage() {
@@ -60,11 +56,10 @@ export default async function HomePage() {
 
 
   return (
-    <div>
-      {/* <h1>{page.title}</h1> */}
-      <div className="page">
+    <main className="min-h-screen bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <BlocksRenderer layout={page.layout} />
       </div>
-    </div>
+    </main>
   )
 }
