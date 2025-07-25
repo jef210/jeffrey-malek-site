@@ -8,6 +8,17 @@ export default {
     './src/blocks/**/*.{js,ts,jsx,tsx,mdx}',
     './src/collections/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  safelist: [
+    'bg-red-500',
+    'text-white',
+    'text-2xl',
+    'font-black',
+    'font-semibold',
+    'tracking-tight',
+    'tracking-wide',
+    'hover:text-gray-200',
+    'hover:bg-red-600'
+  ],
   theme: {
     extend: {
       colors: {
